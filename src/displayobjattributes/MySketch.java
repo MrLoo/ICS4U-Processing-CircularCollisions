@@ -30,28 +30,25 @@ public class MySketch extends PApplet {
   public void draw() {
     background(255); // clear the screen
     person1.draw(); // draw the person on the screen
-      if (keyPressed) {
-        if (keyCode == LEFT) {
-          person2.move(-2, 0);
-        } else if (keyCode == RIGHT) {
-          person2.move(2, 0);
-        } else if (keyCode == UP) {
-          person2.move(0, -2);
-        } else if (keyCode == DOWN) {
-          person2.move(0, 2);
-        }
+    if (keyPressed) {
+      if (keyCode == LEFT) {
+        person2.move(-2, 0);
+      } else if (keyCode == RIGHT) {
+        person2.move(2, 0);
+      } else if (keyCode == UP) {
+        person2.move(0, -2);
+      } else if (keyCode == DOWN) {
+        person2.move(0, 2);
       }
-    
+    }
     person2.draw(); // draw the person on the screen
-    drawCollisions();
-  }
-  
-  public void drawCollisions() {
+    
     if (person1.isCollidingWith(person2)) {
       fill(255, 0, 0); // set the stroke color to red
       this.text("oouch", person2.x, person2.y); 
     }
   }
+  
 }
 
 
